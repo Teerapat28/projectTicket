@@ -1,12 +1,99 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/webapp/public/bootstrap/dist/css/bootstrap.min.css">
-    <script src="/webapp/public/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/owl.css">
+    <link rel="stylesheet" href="/stylesheets/fontawesome.css">
+    <link rel="stylesheet" href="/stylesheets/templatemo-sixteen.css">
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to อุอิ <%= title %></p>
+   <!-- <div id="preloader">
+      <div class="jumper">
+          <div></div>
+          <div></div>
+          <div></div>
+      </div>
+  </div>   -->
+  <!--header-->
+  <header class="">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.ejs"><h2>S <em>Clothing</em></h2></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.ejs">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li> 
+            <li class="nav-item">
+              <a class="nav-link" href="...">Our Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="...">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="...">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>  
+
+  <div class="banner header-text">
+    <div class="owl-banner owl-carousel">
+      <div class="banner-item-01">
+        <div class="text-content">
+          <h4>Best Offer</h4>
+          <h2>New Arrivals On Sale</h2>
+        </div>
+      </div>
+      <div class="banner-item-02">
+        <div class="text-content">
+          <h4>Flash Deals</h4>
+          <h2>Get your best products</h2>
+        </div>
+      </div>
+      <div class="banner-item-03">
+        <div class="text-content">
+          <h4>Last Minute</h4>
+          <h2>Grab last minute deals</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Additional Scripts -->
+    <script src="/javascripts/custom.js"></script>
+    <script src="/javascripts/owl.js"></script>
+    <script src="/javascripts/slick.js"></script>
+    <script src="/javascripts/isotope.js"></script>
+    <script src="/javascripts/accordions.js"></script>
+
+
+    <script language = "text/Javascript"> 
+      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+      function clearField(t){                   //declaring the array outside of the
+      if(! cleared[t.id]){                      // function makes it static and global
+          cleared[t.id] = 1;  // you could use true and false, but that's more typing
+          t.value='';         // with more chance of typos
+          t.style.color='#fff';
+          }
+      }
+    </script>
+
+
   </body>
 </html>
