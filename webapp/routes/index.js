@@ -14,9 +14,12 @@ router.get('/login', function(req, res, next) {
   res.render('login', { title: 'Express' });
   }); 
 
-  router.get('/event', function(req, res, next) {
-    res.render('event', { title: 'Express' });
-    });   
+router.get('/event', function(req, res, next) {
+  res.render('event', { title: 'Express' });
+  });   
 
+router.get('/about', function(req, res, next) {
+  res.render('about', { title: 'Express' });
+  });
   
 module.exports = router;
