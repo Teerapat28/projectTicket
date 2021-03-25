@@ -22,4 +22,8 @@ router.get('/about', function(req, res, next) {
   res.render('about', { title: 'Express' });
   });
   
+router.get('/register', function(req, res, next) {
+  res.render('register', { title: 'Express' });
+  });
+      
 module.exports = router;

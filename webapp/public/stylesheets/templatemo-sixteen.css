@@ -97,7 +97,7 @@ a.filled-button:hover {
 }
 
 .contact-heading {
-	background-image: url('../images/18.png');
+	background-image: url('../images/19.jpg');
 }
 
 .page-heading {
@@ -402,6 +402,12 @@ header .navbar {
 
 
 /* Latest Produtcs */
+.register {
+	margin: 0 auto;
+	width: 500px; 
+	box-sizing: border-box;
+	padding: 20px;
+}
 
 .latest-products {
 	margin-top: 100px;
@@ -414,6 +420,21 @@ header .navbar {
 	font-size: 13px;
 	font-weight: 700;
 	color: #f33f3f;
+}
+
+.latest-products button.filled-button {
+	background-color: #f33f3f;
+	color: #fff;
+	font-size: 14px;
+	text-transform: capitalize;
+	font-weight: 300;
+	padding: 10px 20px;
+	border-radius: 5px;
+	display: inline-block;
+	transition: all 0.3s;
+	border: none;
+	outline: none;
+	cursor: pointer;
 }
 
 .product-item {
@@ -466,6 +487,7 @@ header .navbar {
 	color: #f33f3f;
 	font-weight: 500;
 }
+
 
 
 
@@ -556,7 +578,7 @@ header .navbar {
 
 .call-to-action .inner-content {
 	margin-top: 60px;
-	padding: 30px;
+	padding: 20px;
 	background-color: #f7f7f7;
 	border-radius: 5px;
 }
@@ -572,15 +594,28 @@ header .navbar {
 	font-weight: 700;
 }
 
-.call-to-action .inner-content .col-md-4 {
+/*.call-to-action .inner-content .col-md-4 {
 	text-align: right;
-}
+}*/
 
 .call-to-action .inner-content .filled-button {
 	margin-top: 12px;
 }
 
-
+.call-to-action button.filled-button {
+	background-color: #f33f3f;
+	color: #fff;
+	font-size: 14px;
+	text-transform: capitalize;
+	font-weight: 300;
+	padding: 10px 20px;
+	border-radius: 5px;
+	display: inline-block;
+	transition: all 0.3s;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
 
 
 /* Footer */
@@ -838,6 +873,11 @@ footer .inner-content p a {
 
 .send-message {
 	margin-top: 100px;
+	text-align: center;
+	margin: 0 auto;
+	width: 500px; 
+	box-sizing: border-box;
+	padding: 20px;
 }
 
 .contact-form input {
@@ -1057,4 +1097,5 @@ footer .inner-content p a {
 		right: 0;
 		bottom: 0;
 	}
+		
 }
