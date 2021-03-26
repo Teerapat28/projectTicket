@@ -9,14 +9,15 @@ router.get('/login', function(req, res, next) {
     res.render('login', { title: 'Express' });
     });  
 	
-//	var mysql=require('../connect');
+var mysql=require('../connect');
+const connection = require('../connect');
 
-var connection = mysql.createConnection({
+/*ar connection = mysql.createConnection({
 	host     : 'localhost',
 	user     : 'root',
 	password : '',
 	database : 'da_mydatabase'
-});
+});*/
 
 var router = express();
 router.use(session({
@@ -31,22 +32,37 @@ router.get('/login', function(request, response) {
 });
 
 router.post('/auth', function(request, response) {
+
 	var username = request.body.username;
 	var password = request.body.password;
-	if (username && password) {
-		connection.query('SELECT * FROM accounts WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
-			if (results.length > 0) {
-				request.session.loggedin = true;
-				request.session.username = username;
-				response.redirect('/index');
-			} else {
-				response.send('Incorrect Username and/or Password!');
-			}			
-			response.end();
+
+	if(username && password)
+	{
+		connection.query("SELECT * FROM user WHERE username = ? AND password = ?", [ username , password ] , function(err,result)
+		{
+			if(result.length >0)
+			{
+				response.send("User login") ;
+			}
+			else
+			{
+				connection.query("SELECT * FROM admin WHERE username = ? AND password = ?", [ username , password ] , function(err,result)
+				{
+					if(result.length >0)
+					{
+						response.send("Admin login") ;
+					}
+					else
+					{
+						response.send("Not found this user and password") ;
+					}
+				}) ;
+			}
 		});
-	} else {
-		response.send('Please enter Username and Password!');
-		response.end();
+	}
+	else
+	{
+		response.send("Please enter username and password") ;
 	}
 });
 

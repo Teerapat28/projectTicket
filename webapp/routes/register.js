@@ -14,9 +14,11 @@ router.post('/register', function(request,response)
     var Lname = request.body.Lname ;
     var email = request.body.email ;
     var password = request.body.password ;
+    var CFpassword = request.body.CFpassword ;
     var CiitID = request.body.CiitID ;
     var PhoneNum = request.body.PhoneNum ;
 
+    
     var sql = "INSERT INTO `user`( `Fname`, `Lname`, `email`, `password`, `CiitID`, `PhoneNum`) VALUES (?,?,?,?,?,?)" ;
   connection.query(sql,[Fname , Lname , email , password , CiitID , PhoneNum ],function(err,result) 
   {
