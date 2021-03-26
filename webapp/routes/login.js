@@ -11,6 +11,7 @@ router.get('/login', function(req, res, next) {
 	
 var mysql=require('../connect');
 const connection = require('../connect');
+const { Script } = require('vm');
 
 /*ar connection = mysql.createConnection({
 	host     : 'localhost',
@@ -42,7 +43,9 @@ router.post('/auth', function(request, response) {
 		{
 			if(result.length >0)
 			{
-				response.send("User login") ;
+				request.session.loggedin = true;
+				request.session.username = username;
+				response.redirect('/index');
 			}
 			else
 			{
@@ -50,11 +53,15 @@ router.post('/auth', function(request, response) {
 				{
 					if(result.length >0)
 					{
-						response.send("Admin login") ;
+						request.session.loggedin = true;
+						request.session.username = username;
+						response.redirect('/index');
+						
 					}
 					else
 					{
-						response.send("Not found this user and password") ;
+						//window.alert("Incorrect username or password") ;
+						response.redirect('/login') ;
 					}
 				}) ;
 			}
