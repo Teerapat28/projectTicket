@@ -11,6 +11,14 @@ var eventRouter = require('./routes/index');
 var aboutRouter = require('./routes/index');
 var registerRoutor = require('./routes/register');
 
+//All Show//
+
+var show1Router = require('./routes/index');
+var show2Router = require('./routes/index');
+var show3Router = require('./routes/index');
+var show4Router = require('./routes/index');
+var show5Router = require('./routes/index');
+
 var app = express();
 
 // view engine setup
@@ -29,6 +37,11 @@ app.use('/', loginRouter);
 app.use('/', eventRouter);
 app.use('/', aboutRouter);
 app.use('/', registerRoutor);
+app.use('/', show1Router);
+app.use('/', show2Router);
+app.use('/', show3Router);
+app.use('/', show4Router);
+app.use('/', show5Router);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
