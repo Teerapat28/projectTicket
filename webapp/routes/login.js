@@ -4,14 +4,15 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var path = require('path');
 var router = express.Router();
+var md5 = require('md5');
 
 router.get('/login', function(req, res, next) {
     res.render('login', { title: 'Express' });
     });  
 	
 var mysql=require('../connect');
-const connection = require('../connect');
-const { Script } = require('vm');
+var connection = require('../connect');
+//const { Script } = require('vm');
 
 /*ar connection = mysql.createConnection({
 	host     : 'localhost',
@@ -35,7 +36,8 @@ router.get('/login', function(request, response) {
 router.post('/auth', function(request, response) {
 
 	var username = request.body.username;
-	var password = request.body.password;
+	var temp = request.body.password ;
+	var password = md5(temp) ;
 
 	if(username && password)
 	{
@@ -60,8 +62,7 @@ router.post('/auth', function(request, response) {
 					}
 					else
 					{
-						//window.alert("Incorrect username or password") ;
-						response.redirect('/login') ;
+						response.redirect('/login');
 					}
 				}) ;
 			}
