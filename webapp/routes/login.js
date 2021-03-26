@@ -7,7 +7,7 @@ var router = express.Router();
 var md5 = require('md5');
 
 router.get('/login', function(req, res, next) {
-    res.render('login', { title: 'Express' });
+    // res.render('login', { title: 'Express',LoginErr:"Errororororororoo" });
     });  
 	
 var mysql=require('../connect');
@@ -30,7 +30,7 @@ router.use(session({
 
 
 router.get('/login', function(request, response) {
-	response.sendFile(path.join(__dirname + '/login.ejs'));
+	// response.sendFile(path.join(__dirname + '/login.ejs'));
 });
 
 router.post('/auth', function(request, response) {
@@ -62,6 +62,8 @@ router.post('/auth', function(request, response) {
 					}
 					else
 					{
+						// response.render("/login", { LoginErr : "Incorrect username or password"}); 
+						request.session.error = "Incorrect username or password";
 						response.redirect('/login');
 					}
 				}) ;

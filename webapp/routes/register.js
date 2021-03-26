@@ -19,7 +19,7 @@ router.post('/register', function(request,response)
     var password = request.body.password ;
     var CiitID = request.body.CiitID ;
     var PhoneNum = request.body.PhoneNum ;
-
+ 
     var hash = md5(password) ;
 
     var sql = "INSERT INTO `user`( `username` , `Fname`, `Lname`, `email`, `password`, `CiitID`, `PhoneNum`) VALUES (?,?,?,?,?,?,?)" ;

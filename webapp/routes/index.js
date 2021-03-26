@@ -1,17 +1,25 @@
 var express = require('express');
+var session = require('express-session');
 var router = express.Router();
-
+router.use(session({
+	secret: 'secret',
+	resave: true,
+	saveUninitialized: true
+}));
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  
   res.render('index', { title: 'Express' });
 });
 
 router.get('/index', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Express'});
 });
 
 router.get('/login', function(req, res, next) {
-  res.render('login', { title: 'Express' });
+  error = req.session.error;
+  req.session.error = null;
+  res.render('login', { title: 'Express',error:error});
   }); 
 
 router.get('/event', function(req, res, next) {
