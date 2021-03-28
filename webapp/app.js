@@ -18,6 +18,7 @@ var show2Router = require('./routes/index');
 var show3Router = require('./routes/index');
 var show4Router = require('./routes/index');
 var show5Router = require('./routes/index');
+var show6Router = require('./routes/index');
 
 var app = express();
 
@@ -42,6 +43,7 @@ app.use('/', show2Router);
 app.use('/', show3Router);
 app.use('/', show4Router);
 app.use('/', show5Router);
+app.use('/', show6Router);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
