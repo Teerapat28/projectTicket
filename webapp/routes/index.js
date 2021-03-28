@@ -53,4 +53,8 @@ router.get('/show4', function(req, res, next) {
 router.get('/show5', function(req, res, next) {
   res.render('show5', { title: 'Express' });
   });  
+
+router.get('/show6', function(req, res, next) {
+  res.render('show6', { title: 'Express' });
+  });    
 module.exports = router;
