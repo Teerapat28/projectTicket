@@ -729,6 +729,18 @@ header .navbar {
 	cursor: pointer;
 }
 
+.best-features button.filled-button:hover {
+	background-color: #121212;
+	color: #fff;
+}
+
+.best-features .down-content h6 {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	font-size: 18px;
+	color: #121212;
+}
 
 
 
