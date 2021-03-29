@@ -10,6 +10,7 @@ var loginRouter = require('./routes/login');
 var eventRouter = require('./routes/index');
 var aboutRouter = require('./routes/index');
 var registerRoutor = require('./routes/register');
+var queryeventRouter = require('./routes/queryevent');
 
 //All Show//
 
@@ -38,6 +39,7 @@ app.use('/', loginRouter);
 app.use('/', eventRouter);
 app.use('/', aboutRouter);
 app.use('/', registerRoutor);
+app.use('/', queryeventRouter);
 app.use('/', show1Router);
 app.use('/', show2Router);
 app.use('/', show3Router);

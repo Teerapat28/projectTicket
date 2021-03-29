@@ -9,7 +9,7 @@ var mysql = require('mysql2');
     {
         console.log("Result : ")  ;
         console.log(result) ;
-        //res.render('Event', { Data : result }) ;
+        res.render('event', { Data : "Hello" }) ;
     });
 /*});*/
 
