@@ -20,19 +20,11 @@ router.get('/event', function(req, res, next)
 
 router.get('/show1/:id', function(req, res, next)
 {
-    connection.query(`SELECT * FROM \`showinfo\` where Show_ID = ${req.params.id}`, function(err,result)
+    connection.query(`SELECT shi.*, z.ZoneName , z.ZonePrice FROM showinfo shi JOIN zone z ON(shi.Hallnumber=z.HallID) WHERE shi.Show_ID = ${req.params.id}`, function(err,result)
     {  
         console.log(req.params.id) ;
         console.log(result) ;
-        var hallnumber = result.hallnumber ;
         res.render('show1', { name:result[0] });
-    });
-
-    connection.query(`SELECT * FROM \`zone\` where HallID = ${req.params.id}`, function(err,result)
-    {  
-        console.log(req.params.id) ;
-        console.log(result) ;
-        res.render('show1', { zone:result[0] });
     });
 });
 module.exports = router;
