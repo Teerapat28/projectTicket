@@ -22,7 +22,17 @@ router.get('/show1/:id', function(req, res, next)
 {
     connection.query(`SELECT * FROM \`showinfo\` where Show_ID = ${req.params.id}`, function(err,result)
     {  
-        res.render('show1', { items:result[0] });
+        console.log(req.params.id) ;
+        console.log(result) ;
+        var hallnumber = result.hallnumber ;
+        res.render('show1', { name:result[0] });
+    });
+
+    connection.query(`SELECT * FROM \`zone\` where HallID = ${req.params.id}`, function(err,result)
+    {  
+        console.log(req.params.id) ;
+        console.log(result) ;
+        res.render('show1', { zone:result[0] });
     });
 });
 module.exports = router;
