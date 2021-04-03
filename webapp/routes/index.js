@@ -22,9 +22,9 @@ router.get('/login', function(req, res, next) {
   res.render('login', { title: 'Express',error:error});
   }); 
 
-router.get('/event', function(req, res, next) {
-  res.render('event', { title: 'Express' });
-  });   
+// router.get('/event', function(req, res, next) {
+//   res.render('event', { title: 'Express' });
+//   });   
 
 router.get('/about', function(req, res, next) {
   res.render('about', { title: 'Express' });
@@ -34,9 +34,9 @@ router.get('/register', function(req, res, next) {
   res.render('register', { title: 'Express' });
   });
 
-router.get('/show1', function(req, res, next) {
-  res.render('show1', { title: 'Express' });
-  });
+// router.get('/show1', function(req, res, next) {
+//   res.render('show1', { title: 'Express' });
+//   });
 
 router.get('/show2', function(req, res, next) {
   res.render('show2', { title: 'Express' });

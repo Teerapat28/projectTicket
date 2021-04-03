@@ -1,37 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="/stylesheets/owl.css">
-    <link rel="stylesheet" href="/stylesheets/fontawesome.css">
-    <link rel="stylesheet" href="/stylesheets/templatemo-sixteen.css">
-  </head>
-  <body>
-    <!--  Preloader Start   -->
-    <div id="preloader">
-      <div class="jumper">
-          <div></div>
-          <div></div>
-          <div></div>
-      </div>
-       <!--  Preloader End  -->
-  </div>   
+
+<head>
+  <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/stylesheets/owl.css">
+  <link rel="stylesheet" href="/stylesheets/fontawesome.css">
+  <link rel="stylesheet" href="/stylesheets/templatemo-sixteen.css">
+</head>
+
+<body>
+  <!--  Preloader Start   -->
+  <div id="preloader">
+    <div class="jumper">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <!--  Preloader End  -->
+  </div>
   <!--header-->
   <header class="">
     <nav class="navbar navbar-expand-lg">
       <div class="container">
-        <a class="navbar-brand" href="/index"><h2>Soul <em>Out</em></h2></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="/index">
+          <h2>Soul <em>Out</em></h2>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a class="nav-link" href="/index">Home
+
                 <span class="sr-only">(current)</span>
               </a>
-            </li> 
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="/event">Event</a>
             </li>
@@ -45,14 +51,15 @@
         </div>
       </div>
     </nav>
-  </header>  
-   
+  </header>
+
   <div class="show1 header-text">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="text-content">
-            <h4>Show</h4>
+            <h4>Show 
+            </h4>
             <h2>ดึงข้อมูลชื่อshow</h2>
           </div>
         </div>
@@ -77,57 +84,63 @@
           <div class="left-content">
             <h4>ดึงข้อมูลชื่อshow</h4>
             <p>ดึงข้อมูลรายละเอียด</p>
-              <ul class="accordion">
-                <li>
-                    <a>ST</a>
-                    <div class="text-right"><h6>ดึงราคา</h6></div>
-                    <div class="content">
-                      <div class="form-group col-md-4">
-                        <label for="inputState">Number of ticket(s)</label>                 
-                        <select id="inputState" class="form-control">
-                          <option selected>0</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                        </select>
-                      </div>
-                    </div>
-                </li>
-                <li>
-                  <a>VIP</a>
-                  <div class="text-right"><h6>ดึงราคา</h6></div>
-                  <div class="content">
-                    <div class="form-group col-md-4">
-                      <label for="inputState">Number of ticket(s)</label>
-                      <select id="inputState" class="form-control">
-                        <option selected>0</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                      </select>
-                    </div>
+            <ul class="accordion">
+              <li>
+                <a>ST</a>
+                <div class="text-right">
+                  <h6>ดึงราคา</h6>
+                </div>
+                <div class="content">
+                  <div class="form-group col-md-4">
+                    <label for="inputState">Number of ticket(s)</label>
+                    <select id="inputState" class="form-control">
+                      <option selected>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
                   </div>
-                </li>
-                <li>
-                  <a>VVIP</a>
-                  <div class="text-right"><h6>ดึงราคา</h6></div>
-                  <div class="content">
-                    <div class="form-group col-md-4">
-                      <label for="inputState">Number of ticket(s)</label>
-                      <select id="inputState" class="form-control">
-                        <option selected>0</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                      </select>
-                    </div>
+                </div>
+              </li>
+              <li>
+                <a>VIP <%=items.ShowName%></a>
+                <div class="text-right">
+                  <h6>ดึงราคา</h6>
+                </div>
+                <div class="content">
+                  <div class="form-group col-md-4">
+                    <label for="inputState">Number of ticket(s)</label>
+                    <select id="inputState" class="form-control">
+                      <option selected>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
                   </div>
-                </li>
-              </ul>
-              <div class="text-center">
+                </div>
+              </li>
+              <li>
+                <a>VVIP</a>
+                <div class="text-right">
+                  <h6>ดึงราคา</h6>
+                </div>
+                <div class="content">
+                  <div class="form-group col-md-4">
+                    <label for="inputState">Number of ticket(s)</label>
+                    <select id="inputState" class="form-control">
+                      <option selected>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="text-center">
               <button type="submit" class="filled-button">Submit</button>
             </div>
           </div>
@@ -143,8 +156,8 @@
           <div class="inner-content">
             <p>SoulOut &copy; SoulOut Company Limited </br>
             <p>3199 Maleenont Tower, 27th Floor, Rama IV Road,
-              Klongton , Klongtoey, Bangkok 10110</p>     
-          
+              Klongton , Klongtoey, Bangkok 10110</p>
+
           </div>
         </div>
       </div>
@@ -154,29 +167,30 @@
 
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
-    <!-- Additional Scripts -->
-    <script src="/javascripts/custom.js"></script>
-    <script src="/javascripts/owl.js"></script>
-    <script src="/javascripts/slick.js"></script>
-    <script src="/javascripts/isotope.js"></script>
-    <script src="/javascripts/accordions.js"></script>
+  <!-- Additional Scripts -->
+  <script src="/javascripts/custom.js"></script>
+  <script src="/javascripts/owl.js"></script>
+  <script src="/javascripts/slick.js"></script>
+  <script src="/javascripts/isotope.js"></script>
+  <script src="/javascripts/accordions.js"></script>
 
 
-    <script language = "text/Javascript"> 
-      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-      function clearField(t){                   //declaring the array outside of the
-      if(! cleared[t.id]){                      // function makes it static and global
-          cleared[t.id] = 1;  // you could use true and false, but that's more typing
-          t.value='';         // with more chance of typos
-          t.style.color='#fff';
-          }
+  <script language="text/Javascript">
+    cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+    function clearField(t) {                   //declaring the array outside of the
+      if (!cleared[t.id]) {                      // function makes it static and global
+        cleared[t.id] = 1;  // you could use true and false, but that's more typing
+        t.value = '';         // with more chance of typos
+        t.style.color = '#fff';
       }
-    </script>
+    }
+  </script>
 
 
-  </body>
+</body>
+
 </html>

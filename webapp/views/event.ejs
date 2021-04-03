@@ -79,10 +79,37 @@
             <div class="filters-content">
                 <div class="row grid">
 
-                    <% Data %>
-
-
-
+                    <!-- <form action="queryevent" method="POST">
+                      
+                    </form> -->
+       
+                    <!---->
+                    <% items.forEach ( function (item, index ) 
+                      { %>
+                        <div class="col-lg-4 col-md-4 all sh">
+                      <div class="product-item">
+                        <a href="<%=`/show1/${item.Show_ID}`%>"><img src="/images/13.jpg" alt=""></a>
+                        <div class="down-content">
+                          <a href="<%=`/show1/${item.Show_ID}`%>"><h4><%=item.Show_ID %></h4></a>
+                          <h6><br>day.month.year</h6>
+                          <p>รายละเอียด</p>
+                          <ul class="stars">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                          </ul>
+                          <div class="text-right">
+                            <div class="text-right">
+                              <a href="/show1" class="filled-button">Veiw more</a>
+                            </div>                                        
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                      
+                      <%});%>
                     <div class="col-lg-4 col-md-4 all sh">
                       <div class="product-item">
                         <a href="/show1"><img src="/images/13.jpg" alt=""></a>
