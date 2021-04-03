@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2021 at 03:51 PM
+-- Generation Time: Apr 03, 2021 at 02:15 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -135,22 +135,12 @@ CREATE TABLE `seats` (
 
 CREATE TABLE `show` (
   `Show_ID` int(11) NOT NULL,
-  `ShowName` varchar(30) NOT NULL,
+  `ShowName` varchar(20) NOT NULL,
   `BookingDate` date NOT NULL,
-  `EndDate` date NOT NULL,
-  `HallNumber` int(11) NOT NULL,
-  `Owner` varchar(20) NOT NULL,
+  `Endate` date NOT NULL,
+  `Hallnumber` int(11) NOT NULL,
   `AdminID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `show`
---
-
-INSERT INTO `show` (`Show_ID`, `ShowName`, `BookingDate`, `EndDate`, `HallNumber`, `Owner`, `AdminID`) VALUES
-(2, 'โปรเจคลับเด็กในหมู่บ้าน', '2021-03-23', '2021-03-31', 1, 'RMUTT ดอกบัวบาน', 1),
-(3, '60 กว่าปี พี่เบิร์ดธงไชย', '2021-03-30', '2021-04-08', 2, 'ใครไม่รู้', 1),
-(4, 'เซ็ตอัพวันไดร์ฟ', '2021-03-08', '2021-03-22', 3, 'ภูจิ จำกัดมหาชน', 1);
 
 -- --------------------------------------------------------
 
@@ -178,6 +168,31 @@ INSERT INTO `showdatetime` (`ShowDateTime_ID`, `DateTime`, `ShowID`) VALUES
 (7, '2021-03-28 23:29:24', 4),
 (8, '2021-03-29 23:29:24', 4),
 (9, '2021-03-30 23:29:24', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `showinfo`
+--
+
+CREATE TABLE `showinfo` (
+  `Show_ID` int(11) NOT NULL,
+  `ShowName` varchar(20) NOT NULL,
+  `BookingDate` date NOT NULL,
+  `Endate` date NOT NULL,
+  `Hallnumber` int(11) NOT NULL,
+  `AdminID` int(11) NOT NULL,
+  `Image` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `showinfo`
+--
+
+INSERT INTO `showinfo` (`Show_ID`, `ShowName`, `BookingDate`, `Endate`, `Hallnumber`, `AdminID`, `Image`) VALUES
+(1, 'โปรเจคลับเด็ก', '2021-03-23', '2021-03-31', 1, 1, ''),
+(2, '60 กว่าปี พี่เบิร์ดธ', '2021-03-30', '2021-06-09', 2, 1, ''),
+(3, 'เซ็ตอัพวันไดร์ฟ', '2021-03-08', '2021-05-14', 3, 1, '');
 
 -- --------------------------------------------------------
 
@@ -293,6 +308,12 @@ ALTER TABLE `showdatetime`
   ADD PRIMARY KEY (`ShowDateTime_ID`);
 
 --
+-- Indexes for table `showinfo`
+--
+ALTER TABLE `showinfo`
+  ADD PRIMARY KEY (`Show_ID`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -348,13 +369,19 @@ ALTER TABLE `seats`
 -- AUTO_INCREMENT for table `show`
 --
 ALTER TABLE `show`
-  MODIFY `Show_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Show_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `showdatetime`
 --
 ALTER TABLE `showdatetime`
   MODIFY `ShowDateTime_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `showinfo`
+--
+ALTER TABLE `showinfo`
+  MODIFY `Show_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`
