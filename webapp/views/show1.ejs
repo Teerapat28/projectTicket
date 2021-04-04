@@ -84,7 +84,8 @@
         <div class="col-md-6">
           <div class="left-content">
             <h4><%=name[0].ShowName%></h4>
-            <p><%=name[0].Desc%></p>
+            <P>รอบการแสดง : <%= name[0].DateTime %> </P>
+            <p>รายละเอียด <br> <%=name[0].Desc%></p>
             <div>Purchase limit 6 tickets for 1 person</div>
             <ul class="accordion">
               <%  name.forEach ( function (name, index ) 

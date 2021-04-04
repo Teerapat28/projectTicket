@@ -26,10 +26,10 @@ router.get('/event', function(req, res, next)
 
 router.get('/show1/:id', function(req, res, next)
 {
-    connection.query(`SELECT shi.*, z.ZoneName , z.ZonePrice , z.Capacity FROM showinfo shi JOIN zone z ON(shi.Hallnumber=z.HallID) WHERE shi.Show_ID = ${req.params.id}`, function(err,result)
+    connection.query(`SELECT shd.DateTime , shi.*, z.ZoneName , z.ZonePrice , z.Capacity FROM showinfo shi JOIN zone z ON(shi.Hallnumber=z.HallID) INNER JOIN showdatetime shd ON (shd.ShowID = shi.Show_ID) WHERE shi.Show_ID = ${req.params.id}`, function(err,result)
     {  
         console.log(req.params.id) ;
-        console.log(result[0].EndDate) ;
+        console.log(result) ;
         res.render('show1', { name:result });
     });
 });

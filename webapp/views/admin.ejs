@@ -68,31 +68,40 @@
                     </div>
                 </div>
                     <div class="col-md-12"> 
-                        <center><form action="" method="">
-                            <h3><center> Data from all of Show </center></h3> <br>
+                        <center><form action="search" method="POST">
+                            <h3><center> Data management page </center></h3> <br>
+                        
                         <div class="form-group">
-                            <div class="col-md-4">
-                            <input type="text" name="" class="form-control" placeholder="ค้นหาข้อมูล" value="">
-                            </div>
-                            <button class="filled-button">ค้นหา</button>                         
+                          <div class="col-md-4">
+                            <input type="text" id="searchinp" name="searchinp" class="form-control" placeholder="Enter show name here" value="">
+                          </div>
+                          <button type="submit" class="filled-button">Search</button>
                         </div>  
                         </form></center>
                             <div class="card">
                                 <div class="card-body">
                                     <center>
                                         <table border="1">
+
                                             <thead>
                                                 <tr>
-                                                    <th>id</th>
-                                                    <th>name</th>
-                                                    <th>detail</th>
-                                                    <th>price</th>
-                                                    <th width="100px"></th>
+                                                    <th>Show id</th>
+                                                    <th>Show name</th>
+                                                    <th>Description</th>
+                                                    <th>Booking date</th>
+                                                    <th>End Booking date</th>
+                                                    <th>Hall name</th>
+                                                    <th>Admin</th>
+                                                    <th width="100px">Operation</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                    
+                                              
+                                              
                                                     <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>
@@ -102,12 +111,12 @@
                                                         <a class="filled-button" href="">Delete</a>
                                                         </td>
                                                     </tr>
-                                                    
+                                                 
                                             </tbody>
                                         </table>
-                                                        <a class="filled-button" href="">เพิ่มรายการShow</a>
-                                                        <a class="filled-button" href="">ใบเสร็จ</a>
-                                                        <a class="filled-button" href="/">หน้าแรก</a>
+                                                        <a class="filled-button" href="">Add show</a>
+                                                        <a class="filled-button" href="">Export</a>
+                                                        <a class="filled-button" href="/">Main page</a>
                                         </center>
                                 </div>
                               </div>    
