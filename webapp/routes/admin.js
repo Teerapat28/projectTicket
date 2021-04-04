@@ -50,4 +50,17 @@ router.get('/delete/:id', function(req, res, next)
     
 });
 
+router.get('/editdata/:id', function(req, res, next)
+{
+    var temp = req.params.id;
+    console.log("TEMP : " + temp) ;
+    var SQL = "SELECT shi.* , h.HallName , ad.Username FROM showinfo shi JOIN hall h ON(shi.Hallnumber = h.Hall_ID) INNER JOIN admin ad ON(ad.Admin_ID = shi.AdminID) WHERE shi.Show_ID = "+ temp  ;
+    console.log("SQL : " + SQL) ;
+    connection.query(SQL , function(err,result)
+    {
+        console.log(result) ;
+        res.render('edit',{ data:result}) ;
+    });
+});
+
 module.exports = router;
