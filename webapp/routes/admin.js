@@ -28,19 +28,25 @@ router.post('/search', function(request, response)
     });
 });
 
-router.get('/delete', function(req, res, next)
+router.get('/temp', function(req, res, next)
 {
 
+    var SQL = "SELECT shi.* , h.HallName , ad.Username FROM showinfo shi JOIN hall h ON(shi.Hallnumber = h.Hall_ID) INNER JOIN admin ad ON(ad.Admin_ID = shi.AdminID) " ;
+    connection.query(SQL , function(err,result)
+    {
+        res.render('admin',{ data : result }) ;
+    });
+    
 });
 
-router.get('/show1/:id', function(req, res, next)
+router.get('/delete/:id', function(req, res, next)
 {
-    connection.query(`SELECT shi.*, z.ZoneName , z.ZonePrice , z.Capacity FROM showinfo shi JOIN zone z ON(shi.Hallnumber=z.HallID) WHERE shi.Show_ID = ${req.params.id}`, function(err,result)
+    
+    connection.query(`DELETE FROM showinfo WHERE = ${req.params.id}`, function(err,result)
     {  
-        console.log(req.params.id) ;
-        console.log(result[0].EndDate) ;
         res.render('show1', { name:result });
     });
+    
 });
 
 module.exports = router;

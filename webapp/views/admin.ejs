@@ -98,7 +98,6 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                              
                                               <% data.forEach ( function (data, index ) 
                                                  { 
                                                     %>
@@ -110,11 +109,12 @@
                                                         <td><%= data.Endate %></td>
                                                         <td><%= data.HallName %></td>
                                                         <td style="text-align: center;">
-                                                        <a class="filled-button" href="">Edit</a>
-                                                        <a class="filled-button" href="">Delete</a>
+                                                        <a class="filled-button" href="<%=`/edit/${data.Show_ID}`%>">Edit</a>
+                                                        <a class="filled-button" href="<%=`/delete/${data.Show_ID}`%>">Delete</a>
                                                         </td>
                                                     </tr>
-                                                 <% }); %>
+                                                 <%});
+                                               %>
                                             </tbody>
                                         </table>
                                                         <a class="filled-button" href="">Add show</a>
