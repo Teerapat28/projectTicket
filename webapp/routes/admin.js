@@ -64,9 +64,10 @@ router.get('/editdata/:id', function(req, res)
     });
 });
 
-router.get('/updateData', function(req, res)
+router.post('/update', function(req, res)
 {
-    var ShowID = req.body.ShowID ;
+    var ShowID = req.body.Show ;
+    console.log("Show ID : "+ShowID) ;
     var ShowName = req.body.ShowName ;
     var Desc = req.body.Desc ;
     var BookingDate = req.body.BookingDate ;
@@ -75,7 +76,13 @@ router.get('/updateData', function(req, res)
     var ShowID = req.body.ShowID ;
     var Photo = req.body.Photo ;
 
-    res.render("/index") ;
+    var sql = "UPDATE `showinfo` SET `ShowName`= '"+ ShowName +"' ,`BookingDate`= '"+ BookingDate +"' ,`Endate`= '"+ Endate +"' ,`Desc`= '"+ Desc +"' WHERE Show_ID = "+ ShowID ;
+    console.log(sql) ;
+    connection.query(sql , function(req , res )
+    {
+
+        console.log(res) ;
+    });
 });
 
 module.exports = router;
