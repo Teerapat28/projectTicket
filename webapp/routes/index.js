@@ -66,4 +66,7 @@ router.get('/admin', function(req, res, next) {
   res.render('admin', { title: 'Express' });
   }); 
 
+router.get('/edit', function(req, res, next) {
+  res.render('edit', { title: 'Express' });
+  }); 
 module.exports = router;

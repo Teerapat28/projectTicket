@@ -14,6 +14,7 @@ var queryeventRouter = require('./routes/queryevent');
 //test pay and admin if edit can delete//
 var paymentRouter = require('./routes/index');
 var adminRouter = require('./routes/admin');
+var editRouter = require('./routes/index');
 
 //All Show//
 
@@ -51,6 +52,7 @@ app.use('/', show5Router);
 app.use('/', show6Router);
 app.use('/', paymentRouter);
 app.use('/', adminRouter);
+app.use('/', editRouter);
 
 
 
