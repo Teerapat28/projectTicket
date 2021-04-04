@@ -12,6 +12,10 @@ var aboutRouter = require('./routes/index');
 var registerRoutor = require('./routes/register');
 var queryeventRouter = require('./routes/queryevent');
 
+//test pay and admin if edit can delete//
+var paymentRouter = require('./routes/index');
+var adminRouter = require('./routes/index');
+
 //All Show//
 
 var show1Router = require('./routes/index');
@@ -46,6 +50,9 @@ app.use('/', show3Router);
 app.use('/', show4Router);
 app.use('/', show5Router);
 app.use('/', show6Router);
+app.use('/', paymentRouter);
+app.use('/', adminRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

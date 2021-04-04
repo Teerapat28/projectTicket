@@ -57,4 +57,13 @@ router.get('/show5', function(req, res, next) {
 router.get('/show6', function(req, res, next) {
   res.render('show6', { title: 'Express' });
   });    
+
+router.get('/payment', function(req, res, next) {
+  res.render('payment', { title: 'Express' });
+  });  
+
+router.get('/admin', function(req, res, next) {
+  res.render('admin', { title: 'Express' });
+  }); 
+
 module.exports = router;
