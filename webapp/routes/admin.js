@@ -41,10 +41,11 @@ router.get('/temp', function(req, res, next)
 
 router.get('/delete/:id', function(req, res, next)
 {
-    
-    connection.query(`DELETE FROM showinfo WHERE = ${req.params.id}`, function(err,result)
+    var sql = 'DELETE FROM showinfo WHERE Show_ID = ?' ;
+    var id = req.params.id ;
+    connection.query(sql , id , function(err,result)
     {  
-        res.render('show1', { name:result });
+        res.redirect('/temp');
     });
     
 });
