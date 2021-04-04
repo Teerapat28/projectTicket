@@ -15,6 +15,7 @@ var queryeventRouter = require('./routes/queryevent');
 var paymentRouter = require('./routes/index');
 var adminRouter = require('./routes/admin');
 var editRouter = require('./routes/index');
+var reportRouter = require('./routes/report');
 
 //All Show//
 
@@ -53,6 +54,7 @@ app.use('/', show6Router);
 app.use('/', paymentRouter);
 app.use('/', adminRouter);
 app.use('/', editRouter);
+app.use('/', reportRouter);
 
 
 

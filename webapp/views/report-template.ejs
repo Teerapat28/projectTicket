@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        table {
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        </style>
+    </head>
+    <body>
+        <div style="width: 85%; margin: 0 7.5%;">
+            <div style="text-align: center; padding-left: 50px;">            
+                <h3>Report</h5>
+            <div style="text-align: left; padding-left: 50px;">   
+                <h3>Performance list</h5>
+                <table>
+                    <tr>
+                        <th>Show id</th>
+                        <th>Show name</th>
+                        <th>Description</th>
+                        <th>Booking date</th>
+                        <th>End Booking date</th>
+                        <th>Hall name</th>
+                    </tr>
+                
+                <% if (items.length > 0) { %>
+                    <% items.forEach(items => {%>
+                       <tr><td><%= items.Show_ID %></td><td><%= items.ShowName %></td><td><%= items.Desc %></td><td><%= items.BookingDate %></td><td><%= items.Endate %></td><td><%= items.HallName %></td></tr>
+                    <%  });%>
+                <% }%>
+                </table>
+             </div>
+        </div>
+    </body>
+</html>
