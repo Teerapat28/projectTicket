@@ -50,17 +50,32 @@ router.get('/delete/:id', function(req, res, next)
     
 });
 
-router.get('/editdata/:id', function(req, res, next)
+router.get('/editdata/:id', function(req, res)
 {
     var temp = req.params.id;
-    console.log("TEMP : " + temp) ;
+    //console.log("TEMP : " + temp) ;
     var SQL = "SELECT shi.* , h.HallName , ad.Username FROM showinfo shi JOIN hall h ON(shi.Hallnumber = h.Hall_ID) INNER JOIN admin ad ON(ad.Admin_ID = shi.AdminID) WHERE shi.Show_ID = "+ temp  ;
-    console.log("SQL : " + SQL) ;
+    //console.log("SQL : " + SQL) ;
     connection.query(SQL , function(err,result)
     {
-        console.log(result) ;
+        if (err) throw err ;
+        //console.log(result) ;
         res.render('edit',{ data:result}) ;
     });
+});
+
+router.get('/updateData', function(req, res)
+{
+    var ShowID = req.body.ShowID ;
+    var ShowName = req.body.ShowName ;
+    var Desc = req.body.Desc ;
+    var BookingDate = req.body.BookingDate ;
+    var Endate = req.body.Endate ;
+    var HallName = req.body.HallName ;
+    var ShowID = req.body.ShowID ;
+    var Photo = req.body.Photo ;
+
+    res.render("/index") ;
 });
 
 module.exports = router;

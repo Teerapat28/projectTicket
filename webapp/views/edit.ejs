@@ -69,32 +69,36 @@
                 </div>
                     <div class="col-md-12"> 
                         <center>
-                          <form id="EditForm" action="UpdateData" method="post">
+                          <form id="EditForm" action="updateData" method="post">
                             <h3><center> Edit Data page </center></h3> <br>                                        
-                              <div class="form-group row">                             
+                              <div class="form-group row"> 
+                                <label class="col-sm-6 col-form-label">Show ID</label>
+                                <div class="col-sm-4">
+                                  <input type="text" name="ShowID" class="form-control" value="" disabled="disabled">  
+                                </div>                            
                                 <label class="col-sm-6 col-form-label">ShowName</label>
                                 <div class="col-sm-4">
-                                  <input type="text" class="form-control" value="">  
+                                  <input type="text" name="ShowName" class="form-control" value="" required>  
                                 </div>
                                 <label class="col-sm-6 col-form-label">Desc</label>
                                 <div class="col-sm-4">
-                                  <input type="text" class="form-control" value="<%= data.Desc %>">  
+                                  <input type="text" name="Desc" class="form-control" value="" required>  
                                 </div>
                                 <label class="col-sm-6 col-form-label">BookingDate</label>
                                 <div class="col-sm-4">
-                                  <input type="text" class="form-control" value="<%= data.BookingDate %>">  
+                                  <input type="text" name="BookingDate" class="form-control" value="" required>  
                                 </div>
                                 <label class="col-sm-6 col-form-label">Endate</label>
                                 <div class="col-sm-4">
-                                  <input type="text" class="form-control" value="<%= data.Endate %>">  
+                                  <input type="text" name="Endate" class="form-control" value="" required>  
                                 </div>
                                 <label class="col-sm-6 col-form-label">HallName</label>
                                 <div class="col-sm-4">
-                                  <input type="text" class="form-control" value="<%= data.HallName %>">  
+                                  <input type="text" name="HallName" class="form-control" value="" required>  
                                 </div> 
                                 <label class="col-sm-6 col-form-label">Photo</label>
                                 <div class="col-sm-4">
-                                  <input type="file" class="form-control-file" id=""> 
+                                  <input type="file" class="form-control-file" id="" name="Photo"> 
                                 </div>                       
                               </div>
                               <button type="submit" class="filled-button">Edit</button>
