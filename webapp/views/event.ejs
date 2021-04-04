@@ -82,14 +82,16 @@
                     </form> -->
        
                     <!---->
+                  
                     <% items.forEach ( function (item, index ) 
-                      { %>
+                      { 
+                        %>
                         <div class="col-lg-4 col-md-4 all sh">
                       <div class="product-item">
                         <a href="<%=`/show1/${item.Show_ID}`%>"><img src="/images/13.jpg" alt=""></a>
                         <div class="down-content">
                           <a href="<%=`/show1/${item.Show_ID}`%>"><h4><%=item.ShowName %></h4></a>
-                          <h6><br>Open for booking on : <%= item.BookingDate %></h6>
+                          <h6><br>Open for booking on : </h6>
                           <p>รายละเอียด <br>  <%= item.Desc %> </p>
 
                           <ul class="stars">
@@ -108,7 +110,7 @@
                       </div>
                     </div>
                       
-                      <%});%>
+                      <% });%>
                      
                 </div>
             </div>

@@ -60,7 +60,7 @@
           <div class="text-content">
             <h4>Show 
             </h4>
-            <h2><%=name.ShowName%></h2>
+            <h2><%=name[0].ShowName%></h2>
           </div>
         </div>
       </div>
@@ -72,7 +72,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="section-heading">
-            <h2><%=name.ShowName%></h2>
+            <h2><%=name[0].ShowName%></h2>
           </div>
         </div>
         <div class="col-md-6">
@@ -83,14 +83,19 @@
         
         <div class="col-md-6">
           <div class="left-content">
-            <h4><%=name.ShowName%></h4>
-            <p><%=name.Desc%></p>
+            <h4><%=name[0].ShowName%></h4>
+            <p><%=name[0].Desc%></p>
             <div>Purchase limit 6 tickets for 1 person</div>
             <ul class="accordion">
+              <%  name.forEach ( function (name, index ) 
+                  { 
+                    if (name.Capacity > 0) {
+                    %>
               <li>
-                <a>Zone A </a>
+                <a>Zone <%= name.ZoneName %> <br> <h6><%= name.Capacity %> Seat(s) remaining </h6> </a>
+                
                 <div class="text-right">
-                  <h6>ดึงราคา</h6>
+                  <h6><%= name.ZonePrice %> BTH</h6>
                 </div>
                 <div class="content">
                   <div class="form-group col-md-4">
@@ -105,60 +110,7 @@
                   </div>
                 </div>
               </li>
-              <li>
-                <a>Zone B </a>
-                <div class="text-right">
-                  <h6>ดึงราคา</h6>
-                </div>
-                <div class="content">
-                  <div class="form-group col-md-4">
-                    <label for="inputState">Select the number of ticket(s)</label>
-                    <select id="inputState" class="form-control">
-                      <option selected>0</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                    </select>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <a>Zone C</a>
-                <div class="text-right">
-                  <h6>ดึงราคา</h6>
-                </div>
-                <div class="content">
-                  <div class="form-group col-md-4">
-                    <label for="inputState">Select the number of ticket(s)</label>
-                    <select id="inputState" class="form-control">
-                      <option selected>0</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                    </select>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <a>VIP</a>
-                <div class="text-right">
-                  <h6>ดึงราคา</h6>
-                </div>
-                <div class="content">
-                  <div class="form-group col-md-4">
-                    <label for="inputState">Select the number of ticket(s)</label>
-                    <select id="inputState" class="form-control">
-                      <option selected>0</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                    </select>
-                  </div>
-                </div>
-              </li>
+              <% } });%>
             </ul>
             <div class="text-center">
               <button type="submit" class="filled-button">Submit</button>
