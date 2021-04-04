@@ -2,9 +2,8 @@ var express = require('express');
 var router = express.Router();
 var connection = require('../connect')
 var mysql = require('mysql2');
+//var request = require('request');
 const { response } = require('express');
-var dayjs = require('dayjs') ;
-const { request } = require('../app');
 /*
 router.get('/edit/:id', function(req, res, next)
 {
@@ -14,17 +13,18 @@ router.get('/edit/:id', function(req, res, next)
     });
 });
 */
-router.post('/search', function(req, res, next)
+
+router.post('/search', function(request, response) 
 {
-    var inp = req.body.searchinp ;
-    console.log("result : ") ;
-    console.log(inp) ;
-    connection.query('SELECT shi.Show_ID , shi.ShowName , shi.BookingDate , shi.Endate , h.HallName , ad.Username , shi.Image FROM showinfo shi JOIN showdatetime shd ON(shi.Show_ID = shd.ShowID) INNER JOIN hall h ON(shi.Hallnumber = h.Hall_ID) INNER JOIN admin ad ON(ad.Admin_ID = shi.AdminID) WHERE shi.ShowName LIKE "%?%" ',[ inp ], function(err,result)
+	var temp = request.body.word;
+    console.log("TEMP  : " + temp) ;
+    var SQL = "SELECT shi.* , h.HallName , ad.Username FROM showinfo shi JOIN hall h ON(shi.Hallnumber = h.Hall_ID) INNER JOIN admin ad ON(ad.Admin_ID = shi.AdminID) WHERE shi.ShowName LIKE '%"+ temp + "%'" ;
+    console.log("SQL  : " + SQL) ;
+    connection.query(SQL , function(err,result)
     {
-        console.log("result : ") ;
-        console.log(inp) ;
+        console.log("RESULT : " + result) ;
         console.log(result) ;
-        res.render('admin', { data:result });
+        response.render('admin',{ data:result}) ;
     });
 });
 
@@ -42,4 +42,5 @@ router.get('/show1/:id', function(req, res, next)
         res.render('show1', { name:result });
     });
 });
+
 module.exports = router;
