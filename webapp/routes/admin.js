@@ -60,7 +60,7 @@ router.get('/editdata/:id', function(req, res)
     {
         if (err) throw err ;
         //console.log(result) ;
-        res.render('edit',{ data:result}) ;
+        res.render('edit',{ data : result}) ;
     });
 });
 
