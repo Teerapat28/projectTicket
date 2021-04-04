@@ -8,14 +8,15 @@
     <link rel="stylesheet" href="/stylesheets/templatemo-sixteen.css">
   </head>
   <body>
-    <!--  Preloader Start   -->
+
+    <!--  Preloader Start   
     <div id="preloader">
       <div class="jumper">
           <div></div>
           <div></div>
           <div></div>
       </div>
-       <!--  Preloader End  -->
+        Preloader End  -->
   </div>   
   <!--header-->
   <header class="">
@@ -27,7 +28,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="/index">Home
                 <span class="sr-only">(current)</span>
               </a>
@@ -46,30 +47,65 @@
       </div>
     </nav>
   </header>  
-
-  <div class="banner header-text">
-    <div class="owl-banner owl-carousel">
-      <div class="banner-item-01">
-        <div class="text-content">
-          <h4>WELCOME</h4>
-          <h2>SOLD YOUR SOUL</h2>
-        </div>
-      </div>
-      <div class="banner-item-02">
-        <div class="text-content">
-          <h4>Flash Deals</h4>
-          <h2>Get your best products</h2>
-        </div>
-      </div>
-      <div class="banner-item-03">
-        <div class="text-content">
-          <h4>Last Minute</h4>
-          <h2>Grab last minute deals</h2>
+   
+  <div class="admin header-text">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="text-content">
+            <h4>For</h4>
+            <h2>Administrator</h2>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
+    <div class="ad-features">
+        <div class="container">
+            
+                <div class="col-md-12">
+                    <div class="section-heading">
+                    </div>
+                </div>
+                    <div class="col-md-12"> 
+                        <center>
+                          <form id="EditForm" action="/insertData" method="post">
+                            <h3><center> Edit Data page </center></h3> <br>                                        
+                              <div class="form-group row"> 
+                                <label class="col-sm-6 col-form-label">ShowName</label>
+                                <div class="col-sm-4">
+                                  <input type="text" name="ShowName" class="form-control"  >  
+                                </div>
+                                <label class="col-sm-6 col-form-label">Desc</label>
+                                <div class="col-sm-4">
+                                  <input type="text" name="Desc" class="form-control" " >  
+                                </div>
+                                <label class="col-sm-6 col-form-label">BookingDate</label>
+                                <div class="col-sm-4">
+                                  <input type="text" name="BookingDate" class="form-control"  >  
+                                </div>
+                                <label class="col-sm-6 col-form-label">Endate</label>
+                                <div class="col-sm-4">
+                                  <input type="text" name="Endate" class="form-control" >  
+                                </div>
+                                <label class="col-sm-6 col-form-label">Hall ID</label>
+                                <div class="col-sm-4">
+                                  <input type="text" name="HallName" class="form-control"  >  
+                                </div> 
+                                <label class="col-sm-6 col-form-label">Admin ID</label>
+                                <div class="col-sm-4">
+                                  <input type="text" name="AdminID" class="form-control"  >  
+                                </div> 
+                                                  
+                              </div>
+                              <button type="submit" class="filled-button">Add show </button>
+                         
+                          </form>
+                        </center>
+                    </div>                
+        </div>
+    </div>
 
   <footer>
     <div class="container">

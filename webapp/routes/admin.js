@@ -73,15 +73,49 @@ router.post('/update', function(req, res)
     var BookingDate = req.body.BookingDate ;
     var Endate = req.body.Endate ;
     var HallName = req.body.HallName ;
-    var ShowID = req.body.ShowID ;
+    //ar ShowID = req.body.ShowID ;
     var Photo = req.body.Photo ;
 
-    var sql = "UPDATE `showinfo` SET `ShowName`= '"+ ShowName +"' ,`BookingDate`= '"+ BookingDate +"' ,`Endate`= '"+ Endate +"' ,`Desc`= '"+ Desc +"' WHERE Show_ID = "+ ShowID ;
-    console.log(sql) ;
-    connection.query(sql , function(req , res )
+    console.log(ShowName);
+    console.log(Desc);
+    console.log(BookingDate);
+    console.log(Endate);
+    console.log(ShowID);
+    //var sql = "UPDATE showinfo SET `ShowName= ? ,BookingDate= ? ,Endate= ? ,Desc= ? WHERE Show_ID = ?" ;
+    //console.log(sql) ;
+    connection.query("UPDATE showinfo SET ShowName= ? ,BookingDate= ? ,Endate= ? ,Desc= ? WHERE Show_ID = ? ",[ShowName , BookingDate , Endate , Desc , ShowID ], function(req , res )
     {
-
         console.log(res) ;
+    });
+});
+
+router.get('/insert', function(req, res)
+{
+    res.render('insertForm') ;
+});
+
+router.post('/insertData', function(req, res)
+{
+    console.log("Found!") ;
+    var ShowName = req.body.ShowName ;
+    var Desc = req.body.Desc;
+    var BookingDate = req.body.BookingDate ;
+    var Endate = req.body.Endate ;
+    var HallID = req.body.HallName ;
+    var AdminID =req.body.AdminID ;
+
+    var sql = "INSERT INTO showinfo (`ShowName`, `BookingDate`, `Endate`, `Hallnumber`, `AdminID`, `Desc`) VALUES (?,?,?,?,?,?)" ;
+    connection.query(sql,[ShowName , BookingDate , Endate , HallID , AdminID, Desc ] , (err,result)=>
+    {
+        if(err)
+        {
+          res.send(err);
+        } 
+        else
+        {
+        //res.send('Database is inserted successfully');
+        res.redirect('/temp');
+        }
     });
 });
 

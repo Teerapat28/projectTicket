@@ -5,6 +5,7 @@ var mysql = require('mysql2');
 const { response } = require('express');
 var dayjs = require('dayjs') ;
 
+
 router.get('/event', function(req, res, next)
 {
     connection.query('SELECT * FROM `showinfo`', function(err,result)

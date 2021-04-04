@@ -38,7 +38,7 @@ router.post('/auth', function(request, response) {
 	var username = request.body.username;
 	var temp = request.body.password ;
 	var password = md5(temp) ;
-
+	console.log(password) ;
 	if(username && password)
 	{
 		connection.query("SELECT * FROM user WHERE username = ? AND password = ?", [ username , password ] , function(err,result)
@@ -47,7 +47,8 @@ router.post('/auth', function(request, response) {
 			{
 				request.session.loggedin = true;
 				request.session.username = username;
-				response.redirect('/index');
+				request.session.class = "user" ;
+				response.render('/index',{ UserSession : request.session.username , ClassSession :request.session.class });
 			}
 			else
 			{
@@ -57,6 +58,7 @@ router.post('/auth', function(request, response) {
 					{
 						request.session.loggedin = true;
 						request.session.username = username;
+						request.session.class = "admin" ;
 						response.redirect('/index');
 						
 					}
@@ -76,17 +78,18 @@ router.post('/auth', function(request, response) {
 	}
 });
 
-router.get('/home', function(request, response) {
-	if (request.session.loggedin) {
-		response.send('Welcome back, ' + request.session.username + '!');
-	} else {
-		response.send('Please login to view this page!');
-	}
-	response.end();
-});
 
 router.get('/', function(req, res, next) {
     res.send('respond with a resource');
   });
+
+
+router.post('/logout',function(req , res) 
+{
+	req.session.loggedin = null ;
+	req.session.username = null ;
+	req.session.class = null ;
+	res.redirect('/index') ;
+});
 
 module.exports = router;

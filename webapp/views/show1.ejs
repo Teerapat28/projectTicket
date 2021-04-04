@@ -87,6 +87,9 @@
             <P>รอบการแสดง : <%= name[0].DateTime %> </P>
             <p>รายละเอียด <br> <%=name[0].Desc%></p>
             <div>Purchase limit 6 tickets for 1 person</div>
+
+
+            <form action="BuyTicket1" method="POST" >
             <ul class="accordion">
               <%  name.forEach ( function (name, index ) 
                   { 
@@ -101,21 +104,27 @@
                 <div class="content">
                   <div class="form-group col-md-4">
                     <label for="inputState">Select the number of ticket(s)</label>
-                    <select id="inputState" class="form-control">
+                    <select id="inputState" name="ZoneNumber<%=index%>" class="form-control">
                       <option selected>0</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
                     </select>
+                    <button href="/BuyTicket1/<%= name.Show_ID %> " type="submit" class="filled-button">Submit</button>
                   </div>
                 </div>
               </li>
               <% } });%>
             </ul>
             <div class="text-center">
-              <button type="submit" class="filled-button">Submit</button>
+              
             </div>
+          </form>
+
+
           </div>
         </div>
       </div>

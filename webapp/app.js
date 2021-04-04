@@ -12,9 +12,10 @@ var aboutRouter = require('./routes/index');
 var registerRoutor = require('./routes/register');
 var queryeventRouter = require('./routes/queryevent');
 //test pay and admin if edit can delete//
-var paymentRouter = require('./routes/index');
+var paymentRouter = require('./routes/payment');
 var adminRouter = require('./routes/admin');
 var editRouter = require('./routes/admin');
+var reportRouter = require('./routes/report');
 var reportRouter = require('./routes/report');
 
 //All Show//

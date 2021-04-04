@@ -74,10 +74,6 @@
                             <h3><center> Edit Data page </center></h3> <br>                                        
                               <div class="form-group row"> 
                                 <%= console.log("DATA = "+data[0].Show_ID) ; %>
-                                <label class="col-sm-6 col-form-label">Show ID</label>
-                                <div class="col-sm-4">
-                                  <input type="text" name="Show" class="form-control" value="<%= data[0].Show_ID %>" disabled="disabled">  
-                                </div>                            
                                 <label class="col-sm-6 col-form-label">ShowName</label>
                                 <div class="col-sm-4">
                                   <input type="text" name="ShowName" class="form-control" value="<%= data[0].ShowName %>" >  
@@ -98,9 +94,9 @@
                                 <div class="col-sm-4">
                                   <input type="text" name="HallName" class="form-control" value="<%= data[0].HallName %>" >  
                                 </div> 
-                                <label class="col-sm-6 col-form-label">Photo</label>
+                                <label class="col-sm-6 col-form-label">Show ID</label>
                                 <div class="col-sm-4">
-                                  <input type="file" class="form-control-file" id="" name="Photo"> 
+                                  <input type="text" name="Show" class="form-control" value="<%= data[0].Show_ID %>" disabled="disabled"> 
                                 </div>                       
                               </div>
                               <button type="submit" class="filled-button">Edit</button>
