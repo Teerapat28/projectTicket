@@ -17,13 +17,13 @@ router.get('/edit/:id', function(req, res, next)
 router.post('/search', function(request, response) 
 {
 	var temp = request.body.word;
-    console.log("TEMP  : " + temp) ;
+    //console.log("TEMP  : " + temp) ;
     var SQL = "SELECT shi.* , h.HallName , ad.Username FROM showinfo shi JOIN hall h ON(shi.Hallnumber = h.Hall_ID) INNER JOIN admin ad ON(ad.Admin_ID = shi.AdminID) WHERE shi.ShowName LIKE '%"+ temp + "%'" ;
-    console.log("SQL  : " + SQL) ;
+    //console.log("SQL  : " + SQL) ;
     connection.query(SQL , function(err,result)
     {
-        console.log("RESULT : " + result) ;
-        console.log(result) ;
+        //console.log("RESULT : " + result) ;
+        //console.log(result) ;
         response.render('admin',{ data:result}) ;
     });
 });
@@ -74,13 +74,13 @@ router.post('/PrepareData', function(req, res)
     var Endate = req.body.Endate ;
     var HallName = req.body.HallName ;
     //ar ShowID = req.body.ShowID ;
-    var Photo = req.body.Photo ;
+    //var Photo = req.body.Photo ;
 
-    console.log(ShowName);
-    console.log(Desc);
-    console.log(BookingDate);
-    console.log(Endate);
-    console.log(ShowID);
+    //console.log(ShowName);
+    //console.log(Desc);
+    //console.log(BookingDate);
+    //console.log(Endate);
+    //console.log(ShowID);
     //var sql = "UPDATE showinfo SET `ShowName= ? ,BookingDate= ? ,Endate= ? ,Desc= ? WHERE Show_ID = ?" ;
     //console.log(sql) ;
     
@@ -110,7 +110,7 @@ router.get('/insert', function(req, res)
 
 router.post('/insertData', function(req, res)
 {
-    console.log("Found!") ;
+    //console.log("Found!") ;
     var ShowName = req.body.ShowName ;
     var Desc = req.body.Desc;
     var BookingDate = req.body.BookingDate ;
