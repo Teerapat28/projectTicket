@@ -64,7 +64,7 @@ router.get('/editdata/:id', function(req, res)
     });
 });
 
-router.post('/update', function(req, res)
+router.post('/PrepareData', function(req, res)
 {
     var ShowID = req.body.Show ;
     console.log("Show ID : "+ShowID) ;
@@ -83,11 +83,25 @@ router.post('/update', function(req, res)
     console.log(ShowID);
     //var sql = "UPDATE showinfo SET `ShowName= ? ,BookingDate= ? ,Endate= ? ,Desc= ? WHERE Show_ID = ?" ;
     //console.log(sql) ;
-    connection.query("UPDATE showinfo SET ShowName= ? ,BookingDate= ? ,Endate= ? ,Desc= ? WHERE Show_ID = ? ",[ShowName , BookingDate , Endate , Desc , ShowID ], function(req , res )
+    
+    var sqlName = "SELECT Hall_ID from Hall WHERE HallName = '?'" ;
+    console.log("Hall Name : "+HallName) ;
+    console.log("SQLname : "+sqlName);
+    
+    connection.query(sqlName, HallName, function(req , res)
+    {
+        console.log("Hall ID : "+res) ; 
+    });
+
+    connection.query("UPDATE `showinfo` SET `ShowName`= ? , `BookingDate` = ? ,`Endate` = ? , `Hallnumber` = ? , `Desc` = ? WHERE Show_ID = ? ",[ShowName , BookingDate , Endate ,HallName, Desc , ShowID ], function(req , res )
     {
         console.log(res) ;
     });
+
+    res.redirect('/temp');
 });
+
+
 
 router.get('/insert', function(req, res)
 {
