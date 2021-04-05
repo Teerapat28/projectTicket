@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2021 at 10:57 AM
+-- Generation Time: Apr 05, 2021 at 02:01 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -46,7 +46,7 @@ CREATE TABLE `address` (
 CREATE TABLE `admin` (
   `Admin_ID` int(11) NOT NULL,
   `Username` varchar(20) NOT NULL,
-  `Password` varchar(20) NOT NULL,
+  `Password` varchar(32) NOT NULL,
   `Root` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -55,9 +55,9 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`Admin_ID`, `Username`, `Password`, `Root`) VALUES
-(1, 'Matichai', '1234', 0),
-(2, 'Teerapat', '1234', 0),
-(3, 'ROOT', '1234', 1);
+(1, 'Matichai', '81dc9bdb52d04dc20036dbd8313ed055', 0),
+(2, 'Teerapat', '81dc9bdb52d04dc20036dbd8313ed055', 0),
+(3, 'ROOT', '81dc9bdb52d04dc20036dbd8313ed055', 1);
 
 -- --------------------------------------------------------
 
@@ -173,10 +173,10 @@ INSERT INTO `showdatetime` (`ShowDateTime_ID`, `DateTime`, `ShowID`) VALUES
 CREATE TABLE `showinfo` (
   `Show_ID` int(11) NOT NULL,
   `ShowName` varchar(50) NOT NULL,
-  `BookingDate` date NOT NULL,
-  `Endate` date NOT NULL,
+  `BookingDate` varchar(10) NOT NULL,
+  `Endate` varchar(10) NOT NULL,
   `Hallnumber` int(11) NOT NULL,
-  `AdminID` int(11) NOT NULL,
+  `AdminID` int(11) DEFAULT NULL,
   `Desc` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -187,9 +187,11 @@ CREATE TABLE `showinfo` (
 INSERT INTO `showinfo` (`Show_ID`, `ShowName`, `BookingDate`, `Endate`, `Hallnumber`, `AdminID`, `Desc`) VALUES
 (1, 'โปรเจคลับเด็กข้างบ้าน', '2021-03-23', '2021-03-31', 1, 1, 'แก๊งค์เด็กน้อยสามคน ภู นอร์ท ฟรัง ที่จะต้องร่วมมือกันฝ่าวิกฤต F จากวิชา \" เว็บแอปเดเวลอป \" ไปให้ได้ เพื่ออนาคตอันสดใสของเขาทั้งสามคน'),
 (2, '60 กว่าปี พี่เบิร์ดธงชัย', '2021-03-30', '2021-06-09', 2, 1, 'ฉันขอสัญญา จะจำทุกเรื่องราว ไม่ว่าร้ายหรือดี สุขหรือทุกข์ใจ\r\nฉันจะทบทวน เรื่องราวของเธอตลอดไป\r\nเผื่อวันสุดท้ายที่ฉันหายใจ จะได้ไม่ลืมเธอ'),
-(3, 'เซ็ตอัพกิตฮัพ', '2021-03-08', '2021-05-14', 3, 1, 'Nothing good start in the getaway car'),
-(5, 'ดาต้าเบสวุ่นวาย', '2021-04-04', '0000-00-00', 1, 1, 'ทดสอบฐานข้อมูลว่าทำงานถูกต้องหรือไม่'),
-(6, 'F The death Alphabet', '2021-04-01', '2021-04-30', 1, 1, 'F is the wort alphabet ever the word be born');
+(6, 'F The death Alphabet', '2021-04-01', '2021-04-30', 1, 1, 'F is the wort alphabet ever the word be born'),
+(8, 'มหากาฬตี 5', '2021-05-21', '2021-06-20', 1, 1, 'น๊อนนอนไม่หลั หัวใจมันกระสับกระส่าย'),
+(9, 'บลา ๆ', '2021-04-01', '2021-05-21', 3, 1, 'บล า ๆ ba nananana'),
+(10, 'พี่นาคพระโขนง', '2021-05-21', '2021-06-20', 1, 2, 'ฉีนรอพี่ที่ท่าน้ำทุกวันเลยนะจ๊ะ'),
+(11, 'สามวันดี สี่วันไข้', '2021-05-21', '2021-06-20', 3, 2, 'วันนี้อารมณ์ สักพักเป็นโควิท');
 
 -- --------------------------------------------------------
 
@@ -378,7 +380,7 @@ ALTER TABLE `showdatetime`
 -- AUTO_INCREMENT for table `showinfo`
 --
 ALTER TABLE `showinfo`
-  MODIFY `Show_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Show_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user`
