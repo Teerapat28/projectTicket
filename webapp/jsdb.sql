@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 06, 2021 at 11:40 PM
+-- Generation Time: Apr 07, 2021 at 12:42 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -57,7 +57,8 @@ CREATE TABLE `admin` (
 INSERT INTO `admin` (`Admin_ID`, `Username`, `Password`, `Root`) VALUES
 (1, 'Matichai', '81dc9bdb52d04dc20036dbd8313ed055', 0),
 (2, 'Teerapat', '81dc9bdb52d04dc20036dbd8313ed055', 0),
-(3, 'ROOT', '81dc9bdb52d04dc20036dbd8313ed055', 1);
+(3, 'ROOT', '81dc9bdb52d04dc20036dbd8313ed055', 1),
+(4, 'Nat', '81dc9bdb52d04dc20036dbd8313ed055', 0);
 
 -- --------------------------------------------------------
 
@@ -85,21 +86,6 @@ INSERT INTO `hall` (`Hall_ID`, `HallName`, `HallStatus`, `HallValue`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `promotion`
---
-
-CREATE TABLE `promotion` (
-  `Prom_ID` int(11) NOT NULL,
-  `PromName` varchar(20) NOT NULL,
-  `DiscountPrice` double NOT NULL,
-  `PromCode` varchar(10) NOT NULL,
-  `PromDes` varchar(50) NOT NULL,
-  `AdminID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `receipts`
 --
 
@@ -108,19 +94,6 @@ CREATE TABLE `receipts` (
   `UserID` int(11) NOT NULL,
   `ShowID` int(11) NOT NULL,
   `ShowDateTimeID` int(11) NOT NULL,
-  `ZoneID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `seats`
---
-
-CREATE TABLE `seats` (
-  `Seat_ID` int(11) NOT NULL,
-  `SeatNumber` varchar(3) NOT NULL,
-  `SeatStatus` tinyint(1) NOT NULL,
   `ZoneID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -213,7 +186,12 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`User_ID`, `Username`, `Fname`, `Lname`, `email`, `password`, `CiitID`, `PhoneNum`) VALUES
 (7, 'ServerE', 'เมธิชัย', 'ศุขสมบัติ', 'notnoth43@gmail.com', '2919633139abc1cbbedb969c63b994c7', '12', '12'),
-(11, 'LordPhoeniX', 'Matichai', 'Suksombut', 'notnoth43@gmail.com', '2919633139abc1cbbedb969c63b994c7', '1100600416370', '0958723577');
+(11, 'LordPhoeniX', 'Matichai', 'Suksombut', 'notnoth43@gmail.com', '2919633139abc1cbbedb969c63b994c7', '1100600416370', '0958723577'),
+(12, 'MathhaManee', 'เมธิชัย', 'ศุขสมบัติ', 'notnoth43@gmail.com', 'd67b3a2951c3d809254f567554c0b644', '1', '0958723577'),
+(13, 'Matichai_Admin', 'เมธิชัย', 'ศุขสมบัติ', 'notnoth43@gmail.com', '2919633139abc1cbbedb969c63b994c7', '1', '0958723577'),
+(14, 'France.N', 'นรรทน์', 'เนืองทอง', 'France.N@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '1', '1'),
+(15, 'Teerapat.P', 'ธีรภัทร์', 'นิลาพันธุ์', 'Teerapat.P@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '1', '1'),
+(16, 'User', 'User', 'User', 'User@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '1', '1');
 
 -- --------------------------------------------------------
 
@@ -274,22 +252,10 @@ ALTER TABLE `hall`
   ADD PRIMARY KEY (`Hall_ID`);
 
 --
--- Indexes for table `promotion`
---
-ALTER TABLE `promotion`
-  ADD PRIMARY KEY (`Prom_ID`);
-
---
 -- Indexes for table `receipts`
 --
 ALTER TABLE `receipts`
   ADD PRIMARY KEY (`Rep_ID`);
-
---
--- Indexes for table `seats`
---
-ALTER TABLE `seats`
-  ADD PRIMARY KEY (`Seat_ID`);
 
 --
 -- Indexes for table `show`
@@ -335,7 +301,7 @@ ALTER TABLE `address`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `Admin_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Admin_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `hall`
@@ -344,22 +310,10 @@ ALTER TABLE `hall`
   MODIFY `Hall_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `promotion`
---
-ALTER TABLE `promotion`
-  MODIFY `Prom_ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `receipts`
 --
 ALTER TABLE `receipts`
   MODIFY `Rep_ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `seats`
---
-ALTER TABLE `seats`
-  MODIFY `Seat_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `show`
@@ -383,7 +337,7 @@ ALTER TABLE `showinfo`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `User_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `User_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `zone`
