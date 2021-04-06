@@ -42,7 +42,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="section-heading">
-            <h2>ดึงข้อมูลชื่อshow</h2>
+            <h2></h2>
           </div>
         </div>
         <div class="col-md-6">
@@ -53,8 +53,6 @@
         <div class="col-md-6">
           <div class="left-content">
             <center>
-              <h4>ดึงข้อมูลชื่อshow</h4>
-              <p>ดึงข้อมูลสถานที่</p>
               <div class="card">
                 <div class="card-header">
                   รอบการแสดง
@@ -68,37 +66,29 @@
           </div>
           <br />
 
-            <form action="/" method="GET">
+            <form action="/completepayment" method="post">
               <div class="form-group row">
                 <label class="col-sm-6 col-form-label">โซนที่นั่ง</label>
                 <div class="col-sm-6">
-                  <label class="form-control">
-                    <%=ZoneName%>
-                  </label>
+                    <input name="ZoneName" value="<%=ZoneName%>" readonly>
                 </div>
               </div>
               <div class="form-group row">
                 <label class="col-sm-6 col-form-label">จำนวนที่นั่ง</label>
                 <div class="col-sm-6">
-                  <label class="form-control">
-                    <%=Capacity%>
-                  </label>
+                  <input name="Capacity" value="<%=Capacity%>" readonly>
                 </div>
               </div>
               <div class="form-group row">
                 <label class="col-sm-6 col-form-label">ราคาบัตร</label>
                 <div class="col-sm-6">
-                  <label class="form-control">
-                    <%=ZonePrice %>
-                  </label>
+                    <input name="ZonePrice" value="<%=ZonePrice %>" readonly>
                 </div>
               </div>
               <div class="form-group row">
                 <label class="col-sm-6 col-form-label">จำนวนเงินที่ต้องชำระ</label>
                 <div class="col-sm-6">
-                  <label class="form-control">
-                    <%=(ZonePrice*Capacity)%>
-                  </label>
+                    <input name="totalcost" value="<%=(ZonePrice*Capacity)%>" readonly>
                 </div>
               </div>
               <center>

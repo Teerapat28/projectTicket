@@ -13,8 +13,10 @@ const { response } = require('express');
 //         // res.render('show1', { name:result });
 //     });
 // });
-router.get('completepayment',function(req,res){
+router.post('/completepayment',function(req,res){
 
+        res.redirect('/index') ;
+   
 });
 router.get('/BuyTicket1', function (req, res, next) {
     // console.log(req.query.ZoneName);
@@ -26,7 +28,6 @@ router.get('/BuyTicket1', function (req, res, next) {
         req.session.Capacity = req.query.ZoneNumber
         // console.log(req.session.ticket[0].HallID)
         req.session.ZonePrice = req.query.ZonePrice
-     
         let date = new Date(req.query.DateTime);
         const monthNames = ["January", "February", "March", "April", "May", "June",
             "July", "August", "September", "October", "November", "December"
@@ -37,7 +38,7 @@ router.get('/BuyTicket1', function (req, res, next) {
         // connection.query(`SELECT H.HallName , z.ZoneName , Z.ZonePrice FROM Zone Z JOIN Hall H ON(H.Hall_ID = Z.Zone_ID) Where Hall_ID = ${req.session.ticket[0].HallID} AND ZoneName = '${req.session.ticket[0].ZoneName}' `, function (err, result) {
         // req.session.result = req.query.ZonePrice
         // console.log(`SELECT H.HallName , z.ZoneName , Z.ZonePrice FROM Zone Z JOIN Hall H ON(H.Hall_ID = Z.Zone_ID) Where Hall_ID = ${req.session.ticket[0].HallID} AND ZoneName = '${req.session.ticket[0].ZoneName}' `)
-        res.redirect('/payment');
+        res.redirect('/payment' );
         // });
 
     });

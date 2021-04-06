@@ -23,15 +23,32 @@
                     <a class="nav-link" href="/about">About Us</a>
                 </li>
                 <%if( Object.keys(locals.session).length !=0 ){%>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="/logout">Logout
-                        </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link">
-                            Welcome back ,<%=(locals.session.username)%>
-                        </a>
-                    </li>
+                    <%if (locals.session.class == "user") { %>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/logout">Logout
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link">
+                                Welcome back ,<%=(locals.session.username)%>
+                            </a>
+                        </li>
+                    <%} else if (locals.session.class == "admin") {%>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/temp">Management
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/logout">Logout
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link">
+                                Welcome back ,<%=(locals.session.username)%>
+                            </a>
+                        </li>
+                    <%}%>
+                    
                     <%}else{%>
 
                         <li class="nav-item ">

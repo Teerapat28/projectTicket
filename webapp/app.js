@@ -17,7 +17,7 @@ var adminRouter = require('./routes/admin');
 var editRouter = require('./routes/admin');
 var reportRouter = require('./routes/report');
 var reportRouter = require('./routes/report');
-
+var urticketRouter = require('./routes/urticket');
 //All Show//
 
 var show1Router = require('./routes/index');
@@ -69,7 +69,7 @@ app.use('/', paymentRouter);
 app.use('/', adminRouter);
 app.use('/', editRouter);
 app.use('/', reportRouter);
-
+app.use('/', urticketRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

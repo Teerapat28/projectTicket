@@ -3,7 +3,6 @@ var router = express.Router();
 var connection = require('../connect')
 var mysql = require('mysql2');
 //var request = require('request');
-
 const { response } = require('express');
 /*
 router.get('/edit/:id', function(req, res, next)
