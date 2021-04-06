@@ -21,36 +21,7 @@
   </div>
   <!--header-->
   <header class="">
-    <nav class="navbar navbar-expand-lg">
-      <div class="container">
-        <a class="navbar-brand" href="/index">
-          <h2>Soul <em>Out</em></h2>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="/index">Home
-
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/event">Event</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/about">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/login">Login</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <%- include('navbar') %>
   </header>
 
   <div class="show1 header-text">
@@ -58,9 +29,11 @@
       <div class="row">
         <div class="col-md-12">
           <div class="text-content">
-            <h4>Show 
+            <h4>Show
             </h4>
-            <h2><%=name[0].ShowName%></h2>
+            <h2>
+              <%=name[0].ShowName%>
+            </h2>
           </div>
         </div>
       </div>
@@ -72,7 +45,9 @@
       <div class="row">
         <div class="col-md-12">
           <div class="section-heading">
-            <h2><%=name[0].ShowName%></h2>
+            <h2>
+              <%=name[0].ShowName%>
+            </h2>
           </div>
         </div>
         <div class="col-md-6">
@@ -80,49 +55,63 @@
             <img src="/images/23.jpg" alt="">
           </div>
         </div>
-        
+
         <div class="col-md-6">
           <div class="left-content">
-            <h4><%=name[0].ShowName%></h4>
-            <P>รอบการแสดง : <%= name[0].DateTime %> </P>
-            <p>รายละเอียด <br> <%=name[0].Desc%></p>
+            <h4>
+              <%=name[0].ShowName%>
+            </h4>
+            <P>รอบการแสดง : <%= name[0].DateTime %>
+            </P>
+            <p>รายละเอียด <br>
+              <%=name[0].Desc%>
+            </p>
             <div>Purchase limit 6 tickets for 1 person</div>
 
 
-            <form action="BuyTicket1" method="POST" >
+
             <ul class="accordion">
-              <%  name.forEach ( function (name, index ) 
-                  { 
-                    if (name.Capacity > 0) {
-                    %>
-              <li>
-                <a>Zone <%= name.ZoneName %> <br> <h6><%= name.Capacity %> Seat(s) remaining </h6> </a>
-                
-                <div class="text-right">
-                  <h6><%= name.ZonePrice %> BTH</h6>
-                </div>
-                <div class="content">
-                  <div class="form-group col-md-4">
-                    <label for="inputState">Select the number of ticket(s)</label>
-                    <select id="inputState" name="ZoneNumber<%=index%>" class="form-control">
-                      <option selected>0</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                    </select>
-                    <button href="/BuyTicket1/<%= name.Show_ID %> " type="submit" class="filled-button">Submit</button>
-                  </div>
-                </div>
-              </li>
-              <% } });%>
+              <% name.forEach ( function (name, index ) { if (name.Capacity> 0) {
+                %>
+                <form action="/BuyTicket1" method="get">
+                  <li>
+                    <a>Zone <%= name.ZoneName %> <br>
+                        <input type="text" hidden name="ZoneName" value="<%= name.ZoneName %>">
+                        <input type="text" hidden name="DateTime" value="<%= name.DateTime %>">
+                        <h6>
+                          <%= name.Capacity %> Seat(s) remaining
+                            <input type="text" hidden name="Capacity" value="<%= name.Capacity %>">
+                        </h6> </a>
+
+                    <div class="text-right">
+                      <h6>
+                        <%= name.ZonePrice %> BTH
+                          <input type="text" hidden name="ZonePrice" value="<%= name.ZonePrice %>">
+                      </h6>
+                    </div>
+                    <div class="content">
+                      <div class="form-group col-md-4">
+                        <label for="inputState">Select the number of ticket(s)</label>
+                        <select id="inputState" name="ZoneNumber" class="form-control">
+
+                          <option value="1" selected>1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                        </select>
+                        <button type="submit" class="filled-button">Submit</button>
+                      </div>
+                    </div>
+                  </li>
+                </form>
+                <% } });%>
             </ul>
             <div class="text-center">
-              
+
             </div>
-          </form>
+
 
 
           </div>

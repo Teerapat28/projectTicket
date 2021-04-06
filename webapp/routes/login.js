@@ -5,7 +5,8 @@ var bodyParser = require('body-parser');
 var path = require('path');
 var router = express.Router();
 var md5 = require('md5');
-
+var LocalStorage = require('node-localstorage').LocalStorage;
+localStorage = new LocalStorage('./scratch')
 router.get('/login', function(req, res, next) {
     // res.render('login', { title: 'Express',LoginErr:"Errororororororoo" });
     });  
@@ -48,6 +49,8 @@ router.post('/auth', function(request, response) {
 				request.session.loggedin = true;
 				request.session.username = username;
 				request.session.class = "user" ;
+				if(typeof request.session !==  'undefined')localStorage.setItem('session',JSON.stringify(request.session));
+				response.locals = localStorage.getItem('session')
 				response.render('/index',{ UserSession : request.session.username , ClassSession :request.session.class });
 			}
 			else
@@ -59,6 +62,9 @@ router.post('/auth', function(request, response) {
 						request.session.loggedin = true;
 						request.session.username = username;
 						request.session.class = "admin" ;
+						localStorage.setItem('session',JSON.stringify(request.session));
+
+						response.locals = localStorage.getItem('session')
 						response.redirect('/index');
 						
 					}
@@ -66,6 +72,7 @@ router.post('/auth', function(request, response) {
 					{
 						// response.render("/login", { LoginErr : "Incorrect username or password"}); 
 						request.session.error = "Incorrect username or password";
+
 						response.redirect('/login');
 					}
 				}) ;
@@ -84,11 +91,14 @@ router.get('/', function(req, res, next) {
   });
 
 
-router.post('/logout',function(req , res) 
+router.get('/logout',function(req , res) 
 {
 	req.session.loggedin = null ;
 	req.session.username = null ;
 	req.session.class = null ;
+	localStorage.setItem('session',"");
+	console.log(res.locals.session)
+	res.locals.session = null;
 	res.redirect('/index') ;
 });
 
