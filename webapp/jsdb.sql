@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 05, 2021 at 02:01 AM
+-- Generation Time: Apr 06, 2021 at 11:40 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -108,10 +108,7 @@ CREATE TABLE `receipts` (
   `UserID` int(11) NOT NULL,
   `ShowID` int(11) NOT NULL,
   `ShowDateTimeID` int(11) NOT NULL,
-  `ZoneID` int(11) NOT NULL,
-  `SeatID` int(11) DEFAULT NULL,
-  `TimeStamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `PromID` int(11) NOT NULL
+  `ZoneID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -187,7 +184,7 @@ CREATE TABLE `showinfo` (
 INSERT INTO `showinfo` (`Show_ID`, `ShowName`, `BookingDate`, `Endate`, `Hallnumber`, `AdminID`, `Desc`) VALUES
 (1, 'โปรเจคลับเด็กข้างบ้าน', '2021-03-23', '2021-03-31', 1, 1, 'แก๊งค์เด็กน้อยสามคน ภู นอร์ท ฟรัง ที่จะต้องร่วมมือกันฝ่าวิกฤต F จากวิชา \" เว็บแอปเดเวลอป \" ไปให้ได้ เพื่ออนาคตอันสดใสของเขาทั้งสามคน'),
 (2, '60 กว่าปี พี่เบิร์ดธงชัย', '2021-03-30', '2021-06-09', 2, 1, 'ฉันขอสัญญา จะจำทุกเรื่องราว ไม่ว่าร้ายหรือดี สุขหรือทุกข์ใจ\r\nฉันจะทบทวน เรื่องราวของเธอตลอดไป\r\nเผื่อวันสุดท้ายที่ฉันหายใจ จะได้ไม่ลืมเธอ'),
-(6, 'F The death Alphabet', '2021-04-01', '2021-04-30', 1, 1, 'F is the wort alphabet ever the word be born'),
+(6, 'F The death Alphabet', '2021-04-01', '2021-04-30', 2, 1, 'F is the wort alphabet ever the word be born'),
 (8, 'มหากาฬตี 5', '2021-05-21', '2021-06-20', 1, 1, 'น๊อนนอนไม่หลั หัวใจมันกระสับกระส่าย'),
 (9, 'บลา ๆ', '2021-04-01', '2021-05-21', 3, 1, 'บล า ๆ ba nananana'),
 (10, 'พี่นาคพระโขนง', '2021-05-21', '2021-06-20', 1, 2, 'ฉีนรอพี่ที่ท่าน้ำทุกวันเลยนะจ๊ะ'),
@@ -215,7 +212,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`User_ID`, `Username`, `Fname`, `Lname`, `email`, `password`, `CiitID`, `PhoneNum`) VALUES
-(7, 'ServerE', 'เมธิชัย', 'ศุขสมบัติ', 'notnoth43@gmail.com', '12345', '12', '12'),
+(7, 'ServerE', 'เมธิชัย', 'ศุขสมบัติ', 'notnoth43@gmail.com', '2919633139abc1cbbedb969c63b994c7', '12', '12'),
 (11, 'LordPhoeniX', 'Matichai', 'Suksombut', 'notnoth43@gmail.com', '2919633139abc1cbbedb969c63b994c7', '1100600416370', '0958723577');
 
 -- --------------------------------------------------------
@@ -237,7 +234,7 @@ CREATE TABLE `zone` (
 --
 
 INSERT INTO `zone` (`Zone_ID`, `ZoneName`, `Capacity`, `ZonePrice`, `HallID`) VALUES
-(1, 'A', 20, 3000, 1),
+(1, 'A', 1, 3000, 1),
 (2, 'B', 30, 2000, 1),
 (3, 'C', 40, 1000, 1),
 (4, 'VIP', 10, 5000, 1),
@@ -380,7 +377,7 @@ ALTER TABLE `showdatetime`
 -- AUTO_INCREMENT for table `showinfo`
 --
 ALTER TABLE `showinfo`
-  MODIFY `Show_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `Show_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `user`
