@@ -23,19 +23,19 @@
     <%- include('navbar') %>
   </header>  
 
-    <!-- Page Content -->
-    <div class="page-heading products-heading header-text">
+    <!-- Page Content 
+    <div class="page-heading products-heading2 header-text">-->
       <div class="container">
         <div class="row">
           <div class="col-md-12">
             <div class="text-content">
-              <h4>new arrivals</h4>
-              <h2>The Greatest Performance</h2>
+            <!-- <h4>new arrivals</h4>
+              <h2>The Greatest Performance</h2> -->
             </div>
           </div>
         </div>
       </div>
-    </div>
+    <!--</div>-->
 
     
     <div class="products">
@@ -55,15 +55,13 @@
                     <!-- <form action="queryevent" method="POST">
                       
                     </form> -->
-       
-                    <!---->
                   
                     <% items.forEach ( function (item, index ) 
                       { 
                         %>
                         <div class="col-lg-4 col-md-4 all sh">
                       <div class="product-item">
-                        <a href="<%=`/show1/${item.Show_ID}`%>"><img src="/images/13.jpg" alt=""></a>
+                        <a href="<%=`/show1/${item.Show_ID}`%>"><img src="/images/14.jpg" alt=""></a>
                         <div class="down-content">
                           <a href="<%=`/show1/${item.Show_ID}`%>"><h3><%=item.ShowName %></h3></a>
                           <a><br>Open for booking on : <%= item.BookingDate %> </a>
